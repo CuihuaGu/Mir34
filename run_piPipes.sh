@@ -1,0 +1,7 @@
+for i in D15-4069-1433A.CA_RA #D15-4067-1422D.CA_RA D15-4067-1433A.CA_RA D15-4067-1437A.CA_RA D15-4068-1422D.CA_RA D15-4068-1433A.CA_RA D15-4068-1437A.CA_RA D15-4069-1422D.CA_RA D15-4069-1433A.CA_RA D15-4069-1437A.CA_RA D15-4070-1422D.CA_RA D15-4070-1433A.CA_RA D15-4070-1437A.CA_RA
+do
+INPUT_DIR=/mnt/Storage2/home/tuser/guch/MIR34/Output/LenFilter/
+OUT_DIR=/mnt/Storage2/home/tuser/guch/MIR34/Output/piPipes_out/${i}/
+mkdir -p ${OUT_DIR}
+piPipes small -i ${INPUT_DIR}/${i}.fastq.17 -g hg19 -o ${OUT_DIR} -c 16 2>&1 1> ${OUT_DIR}/${i}.piPipes.log
+done
